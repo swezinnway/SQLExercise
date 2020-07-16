@@ -1,0 +1,47 @@
+1.
+ select food_name,MAX(totalprice) from Tableorder,food where Tableorder.food_id=food.food_id group by food.food_id;
++--------------+-----------------+
+| food_name    | MAX(totalprice) |
++--------------+-----------------+
+| white        |         7000000 |
+| egg-bugger   |         7500000 |
+| orangejuce   |          500000 |
+| pinapplejuce |         8500000 |
++--------------+-----------------+
+4 rows in set (0.00 sec)
+
+
+ select food_name,MIN(totalprice) from Tableorder,food where Tableorder.food_id=food.food_id group by food.food_id;
++--------------+-----------------+
+| food_name    | MIN(totalprice) |
++--------------+-----------------+
+| white        |           20000 |
+| egg-bugger   |         7500000 |
+| orangejuce   |          500000 |
+| pinapplejuce |          600000 |
++--------------+-----------------+
+4 rows in set (0.00 sec)
+
+2.
+select sale_date,sum(totalprice)as Totalprice from Tableorder group by sale_date;
++------------+------------+
+| sale_date  | Totalprice |
++------------+------------+
+| 2002-02-20 |    1100000 |
+| 2003-03-20 |   23000000 |
+| 2020-10-20 |      20000 |
+| 2021-10-20 |     300000 |
++------------+------------+
+4 rows in set (0.00 sec)
+
+select food_name,MAX(totalprice) from Tableorder,food where Tableorder.food_id=food.food_id group by food_id; 
+
+
+3.
+select sale_date, sum(totalprice) as  Total_Amount from Tableorder where sale_date between "2002-02-20" and "2020-10-20";
++------------+--------------+
+| sale_date  | Total_Amount |
++------------+--------------+
+| 2002-02-20 |     24120000 |
++------------+--------------+
+1 row in set (0.00 sec)
